@@ -9,7 +9,12 @@ module.exports = (sequelize, DataTypes) => {
     lastName: DataTypes.STRING
   }, {});
   users.associate = function(models) {
-    // associations can be defined here
+    users.hasMany(models.requests,
+      {
+        foreignKey: 'userId',
+        onDelete:'CASCADE'
+
+      })
   };
   return users;
 };
