@@ -15,19 +15,18 @@ app.set('port',(process.env.PORT || 8000))
 
 app.get('/', (req,res) => {
   res.render('home')
+  test
 })
 
-app.post('/test',(req,res) =>{
-  models.users.create({
-    username: req.body.username,
-    password: req.body.password,
-    email: req.body.email,
-    number: req.body.number,
-    firstName: req.body.firstName,
-    lastName: req.body.lastName
-  }).then(() =>{
-    res.redirect('/')
-  })
+app.post('/SignUp',(req,res) =>{
+  console.log(req.body.username)
+  console.log(req.body.password)
+  // models.users.create({
+  //   username: req.body.username,
+  //   password: req.body.password
+  // }).then(() =>{
+  //   res.json('success')
+  // })
 })
 
 app.post('/testRequest',(req,res) =>{
